@@ -1,11 +1,14 @@
-# Welcome to your Jupyter Book
+# Penambangan Data
 
-This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
+Halo, semuanya!
+Perkenalkan, nama aku Aura Ibraliraiza dengan NIM 230411100182. Aku berasal dari program studi Teknik Informatika. Aku sangat antusias untuk belajar dan berkembang di dunia teknologi, khususnya di bidang pemrograman dan pengembangan perangkat lunak. Senang bisa bergabung di sini, dan aku berharap bisa berkolaborasi serta bertukar ilmu dengan teman-teman semua. Terima kasih! 😊
 
-Check out the content pages bundled with this sample book to see more.
+Identitas mahasiswa
+Nim: 230411100182
+nama: aura ibraliraiza
+Prodi: Teknik informatika
+email: ailiraliraiza@gmail.com
+
 
 ```{tableofcontents}
 ```
