@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Tugas 2 &#8212; penambangan data</title>
+    <title>Deteksi Outlier dengan K-Nearest Neighbors (KNN) dalam Data Understanding &#8212; penambangan data</title>
   
   
   
@@ -60,13 +60,11 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Tugas2';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Knn';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Deteksi Outlier dengan K-Nearest Neighbors (KNN) dalam Data Understanding" href="Knn.html" />
-    <link rel="prev" title="TUGAS 1" href="Tugas1.html" />
+    <link rel="next" title="Deteksi Outlier dengan metode Local Outlier Factor (LOF) dalam Data Understanding" href="LOF.html" />
+    <link rel="prev" title="Tugas 2" href="Tugas2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -176,7 +174,7 @@
 
 
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tugas 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tugas2.html">Tugas 2</a></li>
 
 
 
@@ -257,7 +255,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FTugas2.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FKnn.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -287,7 +285,7 @@
       
       
       
-      <li><a href="_sources/Tugas2.ipynb" target="_blank"
+      <li><a href="_sources/Knn.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -363,7 +361,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Tugas 2</h1>
+    <h1>Deteksi Outlier dengan K-Nearest Neighbors (KNN) dalam Data Understanding</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -373,11 +371,8 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Tugas 2</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Deteksi Outlier dengan K-Nearest Neighbors (KNN) dalam Data Understanding</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan-dan-langkah-langkah">Penjelasan dan Langkah-langkah:</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Penjelasan dan Langkah-langkah:</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Penjelasan dan Langkah-langkah:</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Penjelasan dan Langkah-langkah:</a></li>
 </ul>
 
             </nav>
@@ -390,16 +385,13 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="tugas-2">
-<h1>Tugas 2<a class="headerlink" href="#tugas-2" title="Link to this heading">#</a></h1>
-<p><strong>Penjelasan Outlier Deteksi dengan K-Nearest Neighbors (KNN) dalam Data Understanding</strong></p>
-<p><strong>1.  Apa itu Outlier Deteksi?</strong></p>
-<p>Outlier adalah data yang menyimpang jauh dari nilai-nilai lain dalam suatu dataset. Outlier bisa terjadi karena kesalahan dalam pengukuran atau bisa juga menunjukkan bahwa ada fenomena unik yang patut diteliti lebih lanjut
-Outlier deteksi (atau deteksi outlier) adalah proses untuk mengidentifikasi data yang jauh berbeda atau menyimpang dari pola umum dalam sebuah dataset. Ada beberapa metode yang bisa digunakan untuk mendeteksi outlier, mulai dari teknik visualisasi sederhana hingga metode statistik yang lebih kompleks.</p>
-<p><strong>2.  Kenapa KNN Bisa Digunakan untuk Deteksi Outlier</strong></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="deteksi-outlier-dengan-k-nearest-neighbors-knn-dalam-data-understanding">
+<h1>Deteksi Outlier dengan K-Nearest Neighbors (KNN) dalam Data Understanding<a class="headerlink" href="#deteksi-outlier-dengan-k-nearest-neighbors-knn-dalam-data-understanding" title="Link to this heading">#</a></h1>
+<ol class="arabic simple">
+<li><p><strong>Kenapa KNN Bisa Digunakan untuk Deteksi Outlier</strong></p></li>
+</ol>
 <p>KNN (K-Nearest Neighbors) bisa digunakan untuk deteksi outlier karena caranya yang intuitif dalam mengidentifikasi titik data yang tidak sesuai dengan data lainnya.</p>
-<p>Misalkan, jika kita memiliki dataset dengan K=3, kita bisa menghitung jarak antara setiap titik data dan tiga tetangga terdekatnya. Jika rata-rata jarak tersebut melebihi ambang batas yang telah ditentukan, titik data tersebut bisa diklasifikasikan sebagai outlier</p>
-<p><strong>3. Langkah-Langkah Deteksi Outlier dengan KNN</strong></p>
+<p>Misalkan, jika kita memiliki dataset dengan K=3, kita bisa menghitung jarak antara setiap titik data dan tiga tetangga terdekatnya. Jika rata-rata jarak tersebut melebihi ambang batas yang telah ditentukan, titik data tersebut bisa diklasifikasikan sebagai outlier. Berikut langkah-langkah deteksi Outlier dengan KNN:</p>
 <p>a. Menentukan Jarak Antar Titik Data</p>
 <p>Kita menggunakan metrik jarak seperti Euclidean Distance, Manhattan Distance, atau Minkowski Distance untuk mengukur jarak antara suatu titik dengan tetangga terdekatnya.</p>
 <p>b. Menentukan K (Jumlah Tetangga Terdekat)</p>
@@ -446,7 +438,7 @@ Outlier deteksi (atau deteksi outlier) adalah proses untuk mengidentifikasi data
 <div><p>Biaya komputasi tinggi untuk dataset besar karena harus menghitung jarak ke banyak titik.
 Sensitif terhadap nilai K, pemilihan K yang tidak tepat bisa mengurangi akurasi deteksi outlier.</p>
 </div></blockquote>
-<p>Kesimpulan</p>
+<p><strong>Kesimpulan</strong></p>
 <p>KNN dapat digunakan dalam tahap Data Understanding untuk mendeteksi outlier dengan menganalisis jarak antara suatu titik dengan tetangga terdekatnya. Dengan metode seperti K-Nearest Neighbor Distance dan Local Outlier Factor (LOF), kita dapat menandai data yang memiliki kepadatan rendah atau jauh dari data lainnya sebagai outlier. Pemilihan nilai K yang tepat dan metrik jarak yang sesuai menjadi faktor penting untuk keberhasilan deteksi outlier dengan KNN</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -495,7 +487,7 @@ Sensitif terhadap nilai K, pemilihan K yang tidak tepat bisa mengurangi akurasi 
 </ul>
 </li>
 </ol>
-<p>Jadi, kedua perintah tersebut digunakan untuk menginstal pustaka yang diperlukan agar Python dapat berkomunikasi dengan database MySQL dan PostgreSQL. Setelah diinstal, kamu dapat menggunakan pustaka ini untuk membuat koneksi, menjalankan query, dan melakukan operasi lain pada database tersebut.</p>
+<p>Jadi, kedua perintah tersebut digunakan untuk menginstal pustaka yang diperlukan agar Python dapat berkomunikasi dengan database MySQL dan PostgreSQL. Setelah diinstal, kamu dapat menggunakan pustaka ini untuk membuat koneksi, menjalankan query, dan melakukan operasi lain pada database tersebut</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">psycopg2</span>
@@ -745,360 +737,16 @@ Sensitif terhadap nilai K, pemilihan K yang tidak tepat bisa mengurangi akurasi 
 <img alt="_images/a2e4d9a83b6b2d98cf4270eacf4dbda2b6c80d3906e7fbf7357aa87a5c34daba.png" src="_images/a2e4d9a83b6b2d98cf4270eacf4dbda2b6c80d3906e7fbf7357aa87a5c34daba.png" />
 </div>
 </div>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>Penjelasan dan Langkah-langkah:<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">psycopg2</span>
-<span class="kn">import</span> <span class="nn">pymysql</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">scipy.spatial.distance</span> <span class="kn">import</span> <span class="n">euclidean</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Pada bagian ini, kita mengimpor pustaka yang dibutuhkan untuk mengakses database, memproses data, dan visualisasi.</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_pg_data</span><span class="p">():</span>
-    <span class="n">conn</span> <span class="o">=</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
-        <span class="n">host</span><span class="o">=</span><span class="s2">&quot;pg-319a464f-auraibraliraiza09.g.aivencloud.com&quot;</span><span class="p">,</span>
-        <span class="n">user</span><span class="o">=</span><span class="s2">&quot;avnadmin&quot;</span><span class="p">,</span>
-        <span class="n">password</span><span class="o">=</span><span class="s2">&quot;AVNS_EVJaXCw9MKrhLxoQcKj&quot;</span><span class="p">,</span>
-        <span class="n">database</span><span class="o">=</span><span class="s2">&quot;defaultdb&quot;</span><span class="p">,</span>
-        <span class="n">port</span><span class="o">=</span><span class="mi">13533</span>
-    <span class="p">)</span>
-    <span class="n">cursor</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
-    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM lira.postgree&quot;</span><span class="p">)</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
-    <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="n">desc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">desc</span> <span class="ow">in</span> <span class="n">cursor</span><span class="o">.</span><span class="n">description</span><span class="p">]</span>  <span class="c1"># Ambil nama kolom</span>
-    <span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-    <span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-
-    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
-
-</pre></div>
-</div>
-<p>Fungsi ini melakukan:</p>
+<p>Berikut adalah singkat dari langkah-langkah deteksi outlier menggunakan KNN:</p>
 <ol class="arabic simple">
-<li><p>Membuat koneksi ke database PostgreSQL.</p></li>
-<li><p>Menjalankan query untuk mengambil semua data dari tabel lira.postgree.</p></li>
-<li><p>Mengambil data dan nama kolom, lalu menutup koneksi.</p></li>
-<li><p>Mengembalikan data dalam bentuk DataFrame Pandas.</p></li>
+<li><p><strong>Mengimpor Library</strong>: Impor library yang dibutuhkan seperti psycopg2, pymysql, NumPy, Pandas, Seaborn, Matplotlib, dan SciPy.</p></li>
+<li><p><strong>Mengambil Data</strong>: Ambil data dari database PostgreSQL dan MySQL, dan gabungkan berdasarkan kolom ‘id’ dan ‘class’.</p></li>
+<li><p><strong>Menghitung Jarak Euclidean</strong>: Hitung jarak Euclidean dari setiap titik data ke titik referensi yang dipilih (misalnya, baris terakhir dari dataset).</p></li>
+<li><p><strong>Menentukan Threshold Outlier</strong>: Tentukan threshold outlier berdasarkan persentil jarak Euclidean (misalnya, persentil ke-93,5).</p></li>
+<li><p><strong>Identifikasi Outlier</strong>: Tandai titik data yang memiliki jarak lebih besar dari threshold sebagai outlier.</p></li>
+<li><p><strong>Visualisasi</strong>: Buat scatter plot untuk memvisualisasikan outlier pada data fitur numerik.</p></li>
 </ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_mysql_data</span><span class="p">():</span>
-    <span class="n">conn</span> <span class="o">=</span> <span class="n">pymysql</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
-        <span class="n">host</span><span class="o">=</span><span class="s2">&quot;mysql-19018c16-auraibraliraiza09.g.aivencloud.com&quot;</span><span class="p">,</span>
-        <span class="n">user</span><span class="o">=</span><span class="s2">&quot;avnadmin&quot;</span><span class="p">,</span>
-        <span class="n">password</span><span class="o">=</span><span class="s2">&quot;AVNS_rsy2_HLnOlER6ZAwLDN&quot;</span><span class="p">,</span>
-        <span class="n">database</span><span class="o">=</span><span class="s2">&quot;defaultdb&quot;</span><span class="p">,</span>
-        <span class="n">port</span><span class="o">=</span><span class="mi">13533</span>
-    <span class="p">)</span>
-    <span class="n">cursor</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
-    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM flowers&quot;</span><span class="p">)</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
-    <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="n">desc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">desc</span> <span class="ow">in</span> <span class="n">cursor</span><span class="o">.</span><span class="n">description</span><span class="p">]</span>  <span class="c1"># Ambil nama kolom</span>
-    <span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-    <span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-
-    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
-
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Fungsi ini untuk mengambil data dari MySQL, mirip dengan fungsi sebelumnya, tetapi untuk database MySQL dan tabel flowers.</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_postgresql</span> <span class="o">=</span> <span class="n">get_pg_data</span><span class="p">()</span>
-<span class="n">df_mysql</span> <span class="o">=</span> <span class="n">get_mysql_data</span><span class="p">()</span>
-<span class="n">df_postgresql</span> <span class="o">=</span> <span class="n">df_postgresql</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Class&#39;</span><span class="p">:</span> <span class="s1">&#39;class&#39;</span><span class="p">})</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Pada bagian ini, kita memanggil fungsi get_pg_data() dan get_mysql_data() untuk mengambil data dari kedua database. Kita juga mengganti nama kolom Class menjadi class di DataFrame PostgreSQL.</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_mysql</span><span class="p">,</span> <span class="n">df_postgresql</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;class&quot;</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Menggabungkan kedua DataFrame berdasarkan kolom id dan class dengan menggunakan inner join</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">feature_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;petal length&quot;</span><span class="p">,</span> <span class="s2">&quot;petal width&quot;</span><span class="p">,</span> <span class="s2">&quot;sepal length&quot;</span><span class="p">,</span> <span class="s2">&quot;sepal width&quot;</span><span class="p">]</span>
-<span class="n">data_values</span> <span class="o">=</span> <span class="n">df_merged</span><span class="p">[</span><span class="n">feature_columns</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Mengambil kolom fitur numerik yang akan digunakan untuk perhitungan jarak.</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">reference_point</span> <span class="o">=</span> <span class="n">data_values</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Mengambil titik referensi dari baris terakhir pada data.</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compute_distances</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">reference</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">euclidean</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">reference</span><span class="p">)</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">data</span><span class="p">])</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Fungsi ini menghitung jarak Euclidean antara setiap baris data dengan titik referensi.</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_merged</span><span class="p">[</span><span class="s2">&quot;distance&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">compute_distances</span><span class="p">(</span><span class="n">data_values</span><span class="p">,</span> <span class="n">reference_point</span><span class="p">)</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Menghitung jarak Euclidean dan menyimpannya dalam kolom baru distance.</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">threshold</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">df_merged</span><span class="p">[</span><span class="s2">&quot;distance&quot;</span><span class="p">],</span> <span class="mf">93.5</span><span class="p">)</span>
-<span class="n">df_merged</span><span class="p">[</span><span class="s2">&quot;outlier&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_merged</span><span class="p">[</span><span class="s2">&quot;distance&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">threshold</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Menentukan threshold outlier berdasarkan persentil ke-93.5 dan menandai baris yang jaraknya melebihi threshold sebagai outlier.</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df_merged</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Mencetak DataFrame dengan informasi outlier.</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span>
-    <span class="n">x</span><span class="o">=</span><span class="n">df_merged</span><span class="p">[</span><span class="s2">&quot;sepal length&quot;</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">df_merged</span><span class="p">[</span><span class="s2">&quot;sepal width&quot;</span><span class="p">],</span>
-    <span class="n">hue</span><span class="o">=</span><span class="n">df_merged</span><span class="p">[</span><span class="s2">&quot;outlier&quot;</span><span class="p">],</span> <span class="n">palette</span><span class="o">=</span><span class="p">{</span><span class="kc">False</span><span class="p">:</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">:</span> <span class="s2">&quot;red&quot;</span><span class="p">}</span>
-<span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Outlier Detection (Sepal)&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span>
-    <span class="n">x</span><span class="o">=</span><span class="n">df_merged</span><span class="p">[</span><span class="s2">&quot;petal length&quot;</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">df_merged</span><span class="p">[</span><span class="s2">&quot;petal width&quot;</span><span class="p">],</span>
-    <span class="n">hue</span><span class="o">=</span><span class="n">df_merged</span><span class="p">[</span><span class="s2">&quot;outlier&quot;</span><span class="p">],</span> <span class="n">palette</span><span class="o">=</span><span class="p">{</span><span class="kc">False</span><span class="p">:</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">:</span> <span class="s2">&quot;red&quot;</span><span class="p">}</span>
-<span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Outlier Detection (Petal)&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Membuat scatter plot untuk visualisasi hasil deteksi outlier berdasarkan fitur sepal length dan sepal width, serta petal length dan petal width. Titik data yang dianggap outlier diberi warna merah.</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hitung total outlier</span>
-<span class="n">total_outliers</span> <span class="o">=</span> <span class="n">df_merged</span><span class="p">[</span><span class="s2">&quot;outlier&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total Outlier: </span><span class="si">{</span><span class="n">total_outliers</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total Outlier: 10
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="id2">
-<h1>Penjelasan dan Langkah-langkah:<a class="headerlink" href="#id2" title="Link to this heading">#</a></h1>
-<ol class="arabic simple">
-<li><p>Menghitung Total Outlier:</p></li>
-</ol>
-<ul class="simple">
-<li><p>total_outliers = df_merged[“outlier”].sum(): Pada langkah ini, kita menjumlahkan nilai dalam kolom outlier dari DataFrame df_merged. Kolom outlier berisi nilai boolean True atau False, di mana True menunjukkan bahwa baris tersebut adalah outlier. Ketika kita menggunakan metode .sum() pada kolom boolean, nilai True dihitung sebagai 1 dan nilai False dihitung sebagai 0. Oleh karena itu, hasil penjumlahan akan memberikan total jumlah baris yang dianggap outlier.</p></li>
-</ul>
-<ol class="arabic simple" start="2">
-<li><p>Mencetak Total Outlier:</p></li>
-</ol>
-<ul class="simple">
-<li><p>print(f”Total Outlier: {total_outliers}”): Langkah ini mencetak jumlah total outlier yang telah dihitung ke output. Kita menggunakan format string (f-string) untuk menyisipkan nilai total_outliers ke dalam teks yang akan dicetak.</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Urutkan data berdasarkan jarak dari terkecil ke terbesar</span>
-<span class="n">df_sorted</span> <span class="o">=</span> <span class="n">df_merged</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;distance&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="c1"># Tampilkan hasilnya</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df_sorted</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> id           class  petal length  petal width  sepal length  sepal width  distance  outlier
-151           ?????           5.8          1.0           5.1          3.2  0.000000    False
-135  Iris-virginica           5.6          1.4           6.1          2.6  1.249000    False
-150  Iris-virginica           5.1          1.8           5.9          3.0  1.345362    False
- 84 Iris-versicolor           5.1          1.6           6.0          2.7  1.382027    False
-143  Iris-virginica           5.1          1.9           5.8          2.7  1.428286    False
-102  Iris-virginica           5.1          1.9           5.8          2.7  1.428286    False
- 85 Iris-versicolor           4.5          1.5           5.4          3.0  1.438749    False
-104  Iris-virginica           5.6          1.8           6.3          2.9  1.486607    False
-122  Iris-virginica           4.9          2.0           5.6          2.8  1.489966    False
- 67 Iris-versicolor           4.5          1.5           5.6          3.0  1.493318    False
- 71 Iris-versicolor           4.8          1.8           5.9          3.2  1.509967    False
- 56 Iris-versicolor           4.5          1.3           5.7          2.8  1.516575    False
-134  Iris-virginica           5.1          1.5           6.3          2.8  1.529706    False
- 74 Iris-versicolor           4.7          1.2           6.1          2.8  1.552417    False
-138  Iris-virginica           5.5          1.8           6.4          3.1  1.558846    False
- 64 Iris-versicolor           4.7          1.4           6.1          2.9  1.568439    False
-128  Iris-virginica           4.9          1.8           6.1          3.0  1.577973    False
-139  Iris-virginica           4.8          1.8           6.0          3.0  1.577973    False
-114  Iris-virginica           5.0          2.0           5.7          2.5  1.577973    False
- 91 Iris-versicolor           4.4          1.2           5.5          2.6  1.587451    False
- 92 Iris-versicolor           4.6          1.4           6.1          3.0  1.624808    False
-120  Iris-virginica           5.0          1.5           6.0          2.2  1.643168    False
-107  Iris-virginica           4.5          1.7           4.9          2.5  1.646208    False
-117  Iris-virginica           5.5          1.8           6.5          3.0  1.652271    False
- 79 Iris-versicolor           4.5          1.5           6.0          2.9  1.685230    False
- 86 Iris-versicolor           4.5          1.6           6.0          3.4  1.702939    False
- 73 Iris-versicolor           4.9          1.5           6.3          2.5  1.729162    False
- 96 Iris-versicolor           4.2          1.2           5.7          3.0  1.732051    False
-112  Iris-virginica           5.3          1.9           6.4          2.7  1.732051    False
-127  Iris-virginica           4.8          1.8           6.2          2.8  1.734935    False
- 57 Iris-versicolor           4.7          1.6           6.3          3.3  1.737815    False
- 97 Iris-versicolor           4.2          1.3           5.7          2.9  1.760682    False
-149  Iris-virginica           5.4          2.3           6.2          3.4  1.760682    False
-115  Iris-virginica           5.1          2.4           5.8          2.8  1.760682    False
-129  Iris-virginica           5.6          2.1           6.4          2.8  1.760682    False
-124  Iris-virginica           4.9          1.8           6.3          2.7  1.772005    False
- 95 Iris-versicolor           4.2          1.3           5.6          2.7  1.774824    False
- 89 Iris-versicolor           4.1          1.3           5.6          3.0  1.808314    False
-133  Iris-virginica           5.6          2.2           6.4          2.8  1.824829    False
-148  Iris-virginica           5.2          2.0           6.5          3.0  1.833030    False
-147  Iris-virginica           5.0          1.9           6.3          2.5  1.838478    False
-105  Iris-virginica           5.8          2.2           6.5          3.0  1.854724    False
-111  Iris-virginica           5.1          2.0           6.5          3.2  1.857418    False
-137  Iris-virginica           5.6          2.4           6.3          3.4  1.865476    False
- 62 Iris-versicolor           4.2          1.5           5.9          3.0  1.868154    False
-100 Iris-versicolor           4.1          1.3           5.7          2.8  1.870829    False
- 68 Iris-versicolor           4.1          1.0           5.8          2.7  1.905256    False
- 52 Iris-versicolor           4.5          1.5           6.4          3.2  1.905256    False
-116  Iris-virginica           5.3          2.3           6.4          3.2  1.905256    False
- 98 Iris-versicolor           4.3          1.3           6.2          2.9  1.907878    False
-109  Iris-virginica           5.8          1.8           6.7          2.5  1.920937    False
- 78 Iris-versicolor           5.0          1.7           6.7          3.0  1.931321    False
-101  Iris-virginica           6.0          2.5           6.3          3.3  1.933908    False
-125  Iris-virginica           5.7          2.1           6.7          3.3  1.946792    False
- 55 Iris-versicolor           4.6          1.5           6.5          2.8  1.951922    False
- 59 Iris-versicolor           4.6          1.3           6.6          2.9  1.967232    False
- 90 Iris-versicolor           4.0          1.3           5.5          2.5  1.994994    False
- 60 Iris-versicolor           3.9          1.4           5.2          2.7  2.007486    False
- 87 Iris-versicolor           4.7          1.5           6.7          3.1  2.007486    False
- 75 Iris-versicolor           4.3          1.3           6.4          2.9  2.029778    False
- 93 Iris-versicolor           4.0          1.2           5.8          2.6  2.032240    False
- 69 Iris-versicolor           4.5          1.5           6.2          2.2  2.037155    False
- 77 Iris-versicolor           4.8          1.4           6.8          2.8  2.051828    False
-113  Iris-virginica           5.5          2.1           6.8          3.0  2.056696    False
- 88 Iris-versicolor           4.4          1.3           6.3          2.3  2.073644    False
- 54 Iris-versicolor           4.0          1.3           5.5          2.3  2.073644    False
- 53 Iris-versicolor           4.9          1.5           6.9          3.1  2.076054    False
- 70 Iris-versicolor           3.9          1.1           5.6          2.5  2.088061    False
- 83 Iris-versicolor           3.9          1.2           5.8          2.7  2.095233    False
- 76 Iris-versicolor           4.4          1.4           6.6          3.0  2.100000    False
- 72 Iris-versicolor           4.0          1.3           6.1          2.8  2.118962    False
-141  Iris-virginica           5.6          2.4           6.7          3.1  2.137756    False
-144  Iris-virginica           5.9          2.3           6.8          3.2  2.142429    False
-140  Iris-virginica           5.4          2.1           6.9          3.1  2.149419    False
-146  Iris-virginica           5.2          2.3           6.7          3.0  2.156386    False
- 66 Iris-versicolor           4.4          1.4           6.7          3.1  2.165641    False
- 81 Iris-versicolor           3.8          1.1           5.5          2.4  2.193171    False
-130  Iris-virginica           5.8          1.6           7.2          3.0  2.193171    False
-145  Iris-virginica           5.7          2.5           6.7          3.3  2.197726    False
-121  Iris-virginica           5.7          2.3           6.9          3.2  2.222611    False
- 51 Iris-versicolor           4.7          1.4           7.0          3.2  2.231591    False
- 63 Iris-versicolor           4.0          1.0           6.0          2.2  2.247221    False
-126  Iris-virginica           6.0          1.8           7.2          3.2  2.256103    False
- 82 Iris-versicolor           3.7          1.0           5.5          2.4  2.282542    False
-103  Iris-virginica           5.9          2.1           7.1          3.0  2.293469    False
- 65 Iris-versicolor           3.6          1.3           5.6          2.9  2.295648    False
-142  Iris-virginica           5.1          2.3           6.9          3.1  2.330236    False
-108  Iris-virginica           6.3          1.8           7.3          2.9  2.412468    False
- 80 Iris-versicolor           3.5          1.0           5.7          2.6  2.451530    False
-131  Iris-virginica           6.1          1.9           7.4          2.8  2.519921    False
- 61 Iris-versicolor           3.5          1.0           5.0          2.0  2.596151    False
-110  Iris-virginica           6.1          2.5           7.2          3.6  2.628688    False
- 58 Iris-versicolor           3.3          1.0           4.9          2.4  2.632489    False
- 94 Iris-versicolor           3.3          1.0           5.0          2.3  2.658947    False
-106  Iris-virginica           6.6          2.1           7.6          3.0  2.853069    False
- 99 Iris-versicolor           3.0          1.1           5.1          2.5  2.887906    False
-136  Iris-virginica           6.1          2.3           7.7          3.0  2.929164    False
-123  Iris-virginica           6.7          2.0           7.7          2.8  2.954657    False
-118  Iris-virginica           6.7          2.2           7.7          3.8  3.061046    False
-132  Iris-virginica           6.4          2.0           7.9          3.8  3.091925    False
-119  Iris-virginica           6.9          2.3           7.7          2.6  3.165438    False
- 45     Iris-setosa           1.9          0.4           5.1          3.8  3.991240    False
- 25     Iris-setosa           1.9          0.2           4.8          3.4  3.997499    False
- 24     Iris-setosa           1.7          0.5           5.1          3.3  4.131586    False
- 21     Iris-setosa           1.7          0.2           5.4          3.4  4.192851    False
-  6     Iris-setosa           1.7          0.4           5.4          3.9  4.213075    False
- 44     Iris-setosa           1.6          0.6           5.0          3.5  4.230839    False
- 19     Iris-setosa           1.7          0.3           5.7          3.8  4.244997    False
- 27     Iris-setosa           1.6          0.4           5.0          3.4  4.248529    False
- 26     Iris-setosa           1.6          0.2           5.0          3.0  4.281355    False
- 31     Iris-setosa           1.6          0.2           4.8          3.1  4.287190    False
- 12     Iris-setosa           1.6          0.2           4.8          3.4  4.290688    False
- 30     Iris-setosa           1.6          0.2           4.7          3.2  4.294182    False
- 47     Iris-setosa           1.6          0.2           5.1          3.8  4.317407    False
- 32     Iris-setosa           1.5          0.4           5.4          3.4  4.356604    False
- 22     Iris-setosa           1.5          0.4           5.1          3.7  4.370355    False
- 40     Iris-setosa           1.5          0.2           5.1          3.4  4.378356    False
-  8     Iris-setosa           1.5          0.2           5.0          3.4  4.379498    False
- 28     Iris-setosa           1.5          0.2           5.2          3.5  4.385202    False
- 20     Iris-setosa           1.5          0.3           5.1          3.8  4.397727    False
- 10     Iris-setosa           1.5          0.1           4.9          3.1  4.398863    False
- 38     Iris-setosa           1.5          0.1           4.9          3.1  4.398863    False
- 35     Iris-setosa           1.5          0.1           4.9          3.1  4.398863    False
-  4     Iris-setosa           1.5          0.2           4.6          3.1  4.403408    False
- 49     Iris-setosa           1.5          0.2           5.3          3.7  4.406813    False
- 11     Iris-setosa           1.5          0.2           5.4          3.7  4.412482    False
- 18     Iris-setosa           1.4          0.3           5.1          3.5  4.465423    False
- 46     Iris-setosa           1.4          0.3           4.8          3.0  4.469899    False
- 50     Iris-setosa           1.4          0.2           5.0          3.3  4.474371    False
- 29     Iris-setosa           1.4          0.2           5.2          3.4  4.477723    False
-  1     Iris-setosa           1.4          0.2           5.1          3.5  4.482187    False
- 33     Iris-setosa           1.5          0.1           5.2          4.1  4.485532    False
-  7     Iris-setosa           1.4          0.3           4.6          3.4  4.487761    False
-  5     Iris-setosa           1.4          0.2           5.0          3.6  4.491102    False
- 48     Iris-setosa           1.4          0.2           4.6          3.2  4.500000    False
- 13     Iris-setosa           1.4          0.1           4.8          3.0  4.505552    False
-  9     Iris-setosa           1.4          0.2           4.4          2.9  4.536518    False
- 16     Iris-setosa           1.5          0.4           5.7          4.4  4.544227    False
- 41     Iris-setosa           1.3          0.3           5.0          3.5  4.565085    False
-  3     Iris-setosa           1.3          0.2           4.7          3.2  4.588028    False
- 37     Iris-setosa           1.3          0.2           5.5          3.5  4.597826    False
- 34     Iris-setosa           1.4          0.2           5.5          4.2  4.600000     True
- 17     Iris-setosa           1.3          0.4           5.4          3.9  4.603260     True
- 43     Iris-setosa           1.3          0.2           4.4          3.2  4.623851     True
- 39     Iris-setosa           1.3          0.2           4.4          3.0  4.628175     True
- 36     Iris-setosa           1.2          0.2           5.0          3.2  4.670118     True
- 42     Iris-setosa           1.3          0.3           4.5          2.3  4.680812     True
- 15     Iris-setosa           1.2          0.2           5.8          4.0  4.788528     True
- 14     Iris-setosa           1.1          0.1           4.3          3.0  4.855924     True
- 23     Iris-setosa           1.0          0.2           4.6          3.6  4.908156     True
-  2     Iris-setosa          14.0          2.0          40.9         30.0 45.476587     True
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="id3">
-<h1>Penjelasan dan Langkah-langkah:<a class="headerlink" href="#id3" title="Link to this heading">#</a></h1>
-<ol class="arabic simple">
-<li><p>Mengurutkan DataFrame Berdasarkan Kolom distance</p></li>
-</ol>
-<ul class="simple">
-<li><p>df_merged.sort_values(by=”distance”, ascending=True): Perintah ini mengurutkan DataFrame df_merged berdasarkan nilai dalam kolom distance secara menaik (ascending).</p></li>
-<li><p>Hasilnya adalah DataFrame baru df_sorted yang diurutkan berdasarkan jarak dari referensi. Baris dengan nilai jarak terkecil akan berada di awal DataFrame, sedangkan baris dengan nilai jarak terbesar akan berada di akhir.</p></li>
-</ul>
-<ol class="arabic simple" start="2">
-<li><p>Mencetak DataFrame yang Diurutkan:</p></li>
-</ol>
-<ul class="simple">
-<li><p>df_sorted.to_string(index=False): Perintah ini mengkonversi DataFrame df_sorted menjadi string dan mencetaknya tanpa menyertakan indeks baris.</p></li>
-<li><p>print(…): Fungsi print digunakan untuk mencetak DataFrame yang sudah diurutkan ke output.</p></li>
-</ul>
-<p>Langkah-langkah ini memungkinkan kita untuk melihat data yang telah diurutkan berdasarkan kolom distance. Mengurutkan data ini berguna untuk analisis lebih lanjut, seperti mengidentifikasi titik-titik data yang memiliki jarak terdekat atau terjauh dari titik referensi</p>
-<p><strong>Contoh Hasilnya:</strong></p>
-<p>Setelah menjalankan kode ini, output yang dihasilkan akan menampilkan DataFrame df_sorted dengan kolom-kolom yang ada, dan baris-barisnya diurutkan berdasarkan nilai dalam kolom distance.</p>
-<div class="toctree-wrapper compound">
-</div>
+<p>Dengan langkah-langkah ini, Anda dapat mendeteksi outlier dalam dataset menggunakan metode KNN.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1132,20 +780,20 @@ Sensitif terhadap nilai K, pemilihan K yang tidak tepat bisa mengurangi akurasi 
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Tugas1.html"
+       href="Tugas2.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">TUGAS 1</p>
+        <p class="prev-next-title">Tugas 2</p>
       </div>
     </a>
     <a class="right-next"
-       href="Knn.html"
+       href="LOF.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Deteksi Outlier dengan K-Nearest Neighbors (KNN) dalam Data Understanding</p>
+        <p class="prev-next-title">Deteksi Outlier dengan metode Local Outlier Factor (LOF) dalam Data Understanding</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1166,11 +814,8 @@ Sensitif terhadap nilai K, pemilihan K yang tidak tepat bisa mengurangi akurasi 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Tugas 2</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Deteksi Outlier dengan K-Nearest Neighbors (KNN) dalam Data Understanding</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan-dan-langkah-langkah">Penjelasan dan Langkah-langkah:</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Penjelasan dan Langkah-langkah:</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Penjelasan dan Langkah-langkah:</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Penjelasan dan Langkah-langkah:</a></li>
 </ul>
 
   </nav></div>
