@@ -372,6 +372,7 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Deteksi Outlier dengan metode Local Outlier Factor (LOF) dalam Data Understanding</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-baru-sesuai-kode"><strong>Dataset Baru (Sesuai Kode)</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-tentukan-k-tetangga-terdekat-k-2"><strong>Langkah 1: Tentukan k-Tetangga Terdekat (k = 2)</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-tentukan-k-distance"><strong>Langkah 2: Tentukan k-distance</strong></a></li>
@@ -380,6 +381,9 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-5-hitung-lof"><strong>Langkah 5: Hitung LOF</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-6-deteksi-outlier"><strong>Langkah 6: Deteksi Outlier</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan"><strong>Kesimpulan</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-sklearn-untuk-data-contoh"><strong>IMPLEMENTASI SKLEARN UNTUK DATA CONTOH</strong></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan-singkat"><strong>Penjelasan Singkat</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-langkah-kode"><strong>Langkah-Langkah Kode</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#impor-library-yang-dibutuhkan"><strong>1. Impor Library yang Dibutuhkan</strong></a></li>
@@ -409,6 +413,9 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8"><strong>Bagaimana LOF Menentukan Outlier?</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9"><strong>Kesimpulan</strong></a></li>
 </ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -549,6 +556,10 @@ LOF(3) = \frac{(0.08 / 0.071) + (0.076 / 0.071)}{2} = \frac{1.127 + 1.070}{2} = 
 <li><p>Titik <strong>3</strong> dengan LOF ≈ 1.10 <strong>bukan outlier</strong>, tetapi sedikit lebih jarang dibandingkan titik lainnya.</p></li>
 <li><p>Titik <strong>10</strong> dengan jarak yang jauh lebih besar dan <strong>LOF</strong> yang lebih tinggi <strong>pasti outlier</strong>.</p></li>
 </ul>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="implementasi-sklearn-untuk-data-contoh">
+<h1><strong>IMPLEMENTASI SKLEARN UNTUK DATA CONTOH</strong><a class="headerlink" href="#implementasi-sklearn-untuk-data-contoh" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -610,7 +621,6 @@ Data Outlier:
 </div>
 </div>
 <p>Berikut adalah <strong>penjelasan lengkap</strong> dari kode yang menggunakan <strong>Local Outlier Factor (LOF) untuk mendeteksi outlier</strong> dalam dataset:</p>
-</section>
 <hr class="docutils" />
 <section id="penjelasan-singkat">
 <h2><strong>Penjelasan Singkat</strong><a class="headerlink" href="#penjelasan-singkat" title="Link to this heading">#</a></h2>
@@ -1351,6 +1361,7 @@ Langkah-langkah utama yang dilakukan:</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Deteksi Outlier dengan metode Local Outlier Factor (LOF) dalam Data Understanding</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-baru-sesuai-kode"><strong>Dataset Baru (Sesuai Kode)</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-tentukan-k-tetangga-terdekat-k-2"><strong>Langkah 1: Tentukan k-Tetangga Terdekat (k = 2)</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-tentukan-k-distance"><strong>Langkah 2: Tentukan k-distance</strong></a></li>
@@ -1359,6 +1370,9 @@ Langkah-langkah utama yang dilakukan:</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-5-hitung-lof"><strong>Langkah 5: Hitung LOF</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-6-deteksi-outlier"><strong>Langkah 6: Deteksi Outlier</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan"><strong>Kesimpulan</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-sklearn-untuk-data-contoh"><strong>IMPLEMENTASI SKLEARN UNTUK DATA CONTOH</strong></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan-singkat"><strong>Penjelasan Singkat</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-langkah-kode"><strong>Langkah-Langkah Kode</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#impor-library-yang-dibutuhkan"><strong>1. Impor Library yang Dibutuhkan</strong></a></li>
@@ -1388,6 +1402,9 @@ Langkah-langkah utama yang dilakukan:</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8"><strong>Bagaimana LOF Menentukan Outlier?</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9"><strong>Kesimpulan</strong></a></li>
 </ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>
